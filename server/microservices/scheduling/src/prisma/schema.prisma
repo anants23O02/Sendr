@@ -20,7 +20,7 @@ model Message {
   messageType         MessageType
   SenderContactNum    Int
   contacts            Int[]
-  status              MessageStatus
+  status              MessageStatus   
   startDate           DateTime
   endDate             DateTime
   messageTime         DateTime
