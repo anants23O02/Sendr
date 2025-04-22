@@ -1,4 +1,5 @@
 #Also write the db Credentials here as env file can not be saved :)
 NOTIFICATION_DB=postgresql://postgres:bfEVEsnDTVYMZTSWPjnULvRFuhOYPSyN@mainline.proxy.rlwy.net:59250/railway
 LOGIN_SIGNUP_DB=postgresql://postgres:XKbQAiRlzbJKtaYDuYeUTUmACSEdoUAy@tramway.proxy.rlwy.net:43027/railway
-scheduling_DATABASE_URL=postgresql://postgres:TXsKjFmIydosGKdfiYvWvzCJCXopjUsU@shortline.proxy.rlwy.net:23972/scheduling
+scheduling_DATABASE_URL="postgresql://postgres:TXsKjFmIydosGKdfiYvWvzCJCXopjUsU@shortline.proxy.rlwy.net:23972/scheduling"
+EditingandStatusService_DATABASE_URL="postgresql://postgres:EuUXDaPfuPOqmnddqszsVnvOxcKdSvys@centerbeam.proxy.rlwy.net:41109/railway"
