@@ -1,1 +1,2 @@
 #Also write the db Credentials here as env file can not be saved :)
+NOTIFICATION_DB=postgresql://postgres:bfEVEsnDTVYMZTSWPjnULvRFuhOYPSyN@mainline.proxy.rlwy.net:59250/railway
