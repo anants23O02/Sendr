@@ -1,0 +1,1 @@
+#Also write the db Credentials here as env file can not be saved :)
