@@ -20,7 +20,7 @@ export const sendMessage = async (
       from,
       to: formattedTo,
     });
-    console.log('Message sent:', message.sid);
+    console.log('Message sent:', message);
     return message;
   } catch (err) {
     console.error('Error sending message:', err);

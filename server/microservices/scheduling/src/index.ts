@@ -2,6 +2,7 @@ import express, { Application, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import routes from './routes/index'; 
 import { sendMessage } from './services/smsHelper';
+import { scheduleWhatsAppMessage } from './customWhatapp/messageScheduler';
 
 dotenv.config(); // Load environment variables
 
@@ -17,7 +18,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to the Scheduling Microservice!');
 });
 
-// sendMessage("+919103043247",'Hello World', "WHATSAPP"); // Example usage of sendMessage function
+//sendMessage("+919103043247",'Hello World', "WHATSAPP"); // Example usage of sendMessage function non custom
+//scheduleWhatsAppMessage("+919103043247", "Hello World", new Date(Date.now() + 10000)); // Example usage of scheduleWhatsAppMessage function non custom without using the twilio
+
 
 app.use('/api/v1', routes); // SMS routes
 
