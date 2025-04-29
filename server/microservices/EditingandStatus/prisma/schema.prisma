@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  
 }
 
 datasource db {
@@ -26,7 +26,7 @@ model Message {
   mid      Int        @id @default(autoincrement())
   senderId Int
   message  String
-  contacts Int[]
+  contacts BigInt[]
   schedule DateTime[]
   status   Status?    @relation(fields: [statusStatusId], references: [statusId])
   sender         User @relation(fields: [senderId], references: [id])
