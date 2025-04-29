@@ -18,8 +18,8 @@ model Message {
   id                  String   @id @default(cuid())
   content             String
   messageType         MessageType
-  SenderContactNum    Int
-  contacts            Int[]
+  SenderContactNum    BigInt[]
+  contacts            BigInt[]
   status              MessageStatus   
   startDate           DateTime
   endDate             DateTime
@@ -28,10 +28,10 @@ model Message {
   gapBetweenMessages Int
   messageCount        Int
   messageSentCount    Int
-  messagesDateTime   DateTime[]
-  messageWeeklyCount  Int
-  messageMonthlyCount Int
-  messageYearlyCount  Int
+  messagesDateTime    DateTime[]
+  messageWeeklyCount  DateTime[]
+  messageMonthlyCount DateTime[]
+  messageYearlyCount  DateTime[]
   messageDailyCount   Int
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
