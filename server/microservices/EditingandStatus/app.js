@@ -4,6 +4,11 @@ const express=require('express');
 const cors=require('cors')
 const app=express();
 const server=http.createServer(app);
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+
+// Middleware to parse JSON bodies (if needed for other parts of your app)
+app.use(express.json());
 // const { PrismaClient } = require('@prisma/client');
 // const prisma = new PrismaClient();
 
@@ -37,8 +42,11 @@ const server=http.createServer(app);
 // }
 
 const messageRoutes=require('./routes/messageRoutes');
+const twillioRoutes=require('./routes/twillioRoutes');
 
 app.use('/message',messageRoutes);
+//creating twillio api for messaging and status
+app.use('/twillio',twillioRoutes);
 
 // main()
 //   .catch(console.error)
@@ -46,7 +54,7 @@ app.use('/message',messageRoutes);
 //middleware
 
 app.use(express.json());
-app.use(cors());
+
 
 const port=5000;
 server.listen(port,()=>{
