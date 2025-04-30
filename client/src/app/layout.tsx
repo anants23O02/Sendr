@@ -7,7 +7,7 @@ export default function RootLayout({children}: Readonly<{
   return (
     <html lang="en" suppressHydrationWarning>
     <body>
-       {children}
+        {children}
     </body>
   </html>
   );
