@@ -22,7 +22,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile Sidebar */}
-      <div className="md:hidden">
+      <div className="md:hidden ">
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
