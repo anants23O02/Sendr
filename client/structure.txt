@@ -15,8 +15,8 @@ Navbar  - search bar
 
 
 Logo 
-        background   color   active     search bar
-Navbar: 2e2e2e       white              e2e2e2
-Sidebar: white       2e2e2e  e2e2e2
-cards:   e2e2e2      
+           background   color    active     search bar
+Navbar:    2e2e2e       white              e2e2e2
+Sidebar:   white        2e2e2e   e2e2e2
+cards:     e2e2e2      
 
