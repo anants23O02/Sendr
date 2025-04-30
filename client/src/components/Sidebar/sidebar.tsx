@@ -49,7 +49,7 @@ export default function Sidebar() {
       </div>
 
       {/* Desktop Sidebar */}
-      <div className="hidden md:block w-64 h-screen bg-gray-100 p-4">
+      <div className="hidden md:block w-64 h-screen bg-white p-4">
         <NavigationMenu orientation="vertical">
           <NavigationMenuList className="flex flex-col space-y-2">
             <NavigationMenuItem>
