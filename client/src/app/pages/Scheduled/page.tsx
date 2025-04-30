@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import ScheduledTable from "@/components/MessageTable/table";
 import SelectStatus from "@/components/SelectStatus/select";
 import { Search } from "lucide-react";
-import { IoIosAdd } from "react-icons/io";
+import { useRouter } from "next/navigation";
 export default function Scheduled() {
     const [message, setMessage] = useState([]);
 
@@ -18,11 +18,13 @@ export default function Scheduled() {
        
       });
   }, []);
+  const router=useRouter()
+  const handleClick=()=>{router.push('/pages/ViewMessage')}
     return (
       <div>
        <div className="flex w-full justify-between items-stretch p-4">
        <p className="underline">Messages</p>
-       <div className="flex bg-[#2e2e2e] text-white shadow-grey-50 rounded-md  p-2 text-xs">
+       <div className="flex bg-[#2e2e2e] text-white shadow-grey-50 rounded-md  p-2 text-xs" onClick={handleClick}>
        
 
         New Message</div>

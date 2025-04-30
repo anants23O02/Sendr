@@ -2,6 +2,8 @@
 import { TableProps } from './tableinterface';
 import React from "react";
 import { FaEye } from "react-icons/fa";
+import { useRouter } from 'next/navigation'; 
+
 import {
   Table,
   TableBody,
@@ -17,6 +19,12 @@ type Props = {
 };
 
 const ScheduledTable: React.FC<Props> = ({ data }) => {
+  const router = useRouter(); 
+
+  const handleClick = () => {
+    router.push('/pages/ViewMessage'); 
+  };
+
   return (
     <div className="p-4">
       <div className="overflow-auto rounded-2xl shadow-md border border-gray-200">
@@ -27,7 +35,7 @@ const ScheduledTable: React.FC<Props> = ({ data }) => {
               <TableHead className="p-4">Contact</TableHead>
               <TableHead className="p-4">Message</TableHead>
               <TableHead className="p-4 text-right">Status</TableHead>
-              <TableHead className='p-4'>View</TableHead>
+              <TableHead className="p-4">View</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -42,7 +50,12 @@ const ScheduledTable: React.FC<Props> = ({ data }) => {
                 <TableCell className="p-2 text-right font-medium">
                   {row.statusStatusId}
                 </TableCell>
-                <TableCell className='p-2'><FaEye style={{color:"#3D90D7"}}/></TableCell>
+                <TableCell className="p-2">
+                  <FaEye
+                    style={{ color: "#3D90D7", cursor: "pointer" }}
+                    onClick={handleClick}
+                  />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
