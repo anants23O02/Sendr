@@ -1,0 +1,22 @@
+sidebar  
+    |- Home 
+    |- Create New
+    |- Scheduled Messages
+        |- Message 1
+        |- Message 2
+    |- Notification
+    |- Profile
+        |- Edit Profile
+        |- Add Sender 
+    |- Contacts
+        
+
+Navbar  - search bar
+
+
+Logo 
+        background   color   active     search bar
+Navbar: 2e2e2e       white              e2e2e2
+Sidebar: white       2e2e2e  e2e2e2
+cards:   e2e2e2      
+
