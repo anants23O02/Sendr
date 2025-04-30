@@ -7,7 +7,7 @@ export default function RootLayout({children}: Readonly<{
   return (
     <html lang="en" suppressHydrationWarning>
     <body>
-        <main className="container py-10">{children}</main>
+       {children}
     </body>
   </html>
   );
