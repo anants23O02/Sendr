@@ -6,7 +6,7 @@ import logo from "../../../public/logo.svg";
 
 const Navbar: FC<SearchBarProps> = ({ placeholder = "Search in Public Relations" }) => {
   return (
-    <nav className="bg-[#2e2e2e] rounded-md flex flex-row sm:flex-row items-center justify-between w-full px-4 py-3 gap-3 sm:gap-0">
+    <nav className="bg-[#2e2e2e] flex flex-row sm:flex-row items-center justify-between w-full px-4 py-3 gap-3 sm:gap-0">
 
       <div className="flex-shrink-0">
         <Image src={logo} alt="Logo" width={100} height={50} className="h-8 w-auto" />
