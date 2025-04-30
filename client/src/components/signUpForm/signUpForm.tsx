@@ -1,16 +1,27 @@
+'use client'
+import Link from "next/link";
 import clsx from "clsx";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Link from "next/link";
+
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { useState } from "react";
+import { FaRegEye } from "react-icons/fa";
 
-export function LoginForm({
+export function SignUpForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const [show, setShow] = useState(false);
+
+  function handleShow() {
+    setShow((prev)=>!prev);
+  }
   return (
     <div className={clsx("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0">
@@ -18,10 +29,23 @@ export function LoginForm({
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Welcome back</h1>
-                <p className="text-muted-foreground text-balance">
-                  Login to your Sendrr account
+                <h1 className="text-2xl font-bold">
+                  {" "}
+                  Create an Sendrr Account
+                </h1>
+                <p className="text-muted-foreground text-balance mt-3 text-sm">
+                  Let's get started. Fill in the details below to create your
+                  account
                 </p>
+              </div>
+              <div className="grid gap-3">
+                <Label htmlFor="email">Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Alex Johns"
+                  required
+                />
               </div>
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
@@ -33,22 +57,49 @@ export function LoginForm({
                 />
               </div>
               <div className="grid gap-3">
+                <Label htmlFor="email">Contact No.</Label>
+                <Input
+                  id="contact"
+                  type="number"
+                  min={0}
+                  max={9999999999}
+                  placeholder="0129102198"
+                  required
+                />
+              </div>
+              <div className="grid gap-3 relative">
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto text-sm underline-offset-2 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
                 </div>
                 <Input id="password" type="password" required />
+                {show === false ? (
+                  <FaRegEyeSlash
+                    onClick={handleShow}
+                    className="absolute top-9 right-4 cursor-pointer"
+                  />
+                ) : (
+                  <FaRegEye onClick={handleShow} className="absolute top-9 right-4 cursor-pointer" />
+                )}
+              </div>
+              <div className="grid gap-3 relative">
+                <div className="flex items-center">
+                  <Label htmlFor="confirm password">Confirm Password</Label>
+                </div>
+                <Input id="confirm password" type="password" required />
+                {show === false ? (
+                  <FaRegEyeSlash
+                    onClick={handleShow}
+                    className="absolute top-9 right-4  cursor-pointer"
+                  />
+                ) : (
+                  <FaRegEye onClick={handleShow} className="absolute top-9 right-4 cursor-pointer" />
+                )}
               </div>
               <Button
                 type="submit"
                 className="w-full bg-black text-white font-medium"
               >
-                Login
+                Sign Up
               </Button>
               <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                 <span className="bg-card text-muted-foreground relative z-10 px-2">
@@ -71,12 +122,12 @@ export function LoginForm({
                 </Button>
               </div>
               <div className="text-center text-sm">
-                Don&apos;t have an account?{" "}
+                Do you have an account?{" "}
                 <Link
-                  href="/pages/SignUp"
+                  href="/pages/Login"
                   className="underline underline-offset-4"
                 >
-                  Sign up
+                  Login
                 </Link>
               </div>
             </div>
