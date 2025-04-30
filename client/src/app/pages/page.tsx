@@ -1,7 +1,13 @@
-const HomePage=()=>{
-  return(
-    <h1>HomePage</h1>
-  )
-}
 
-export default HomePage;
+import Navbar from "@/components/navbar/navbar";
+import Sidebar from "@/components/Sidebar/sidebar";
+import Image from "next/image";
+
+export default function Home() {
+  return (
+    <>
+     <Navbar/>
+     <Sidebar></Sidebar>
+    </>
+  );
+}
