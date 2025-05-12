@@ -18,7 +18,7 @@ const monthNames = Array.from({ length: 12 }, (_, i) =>
   new Date(0, i).toLocaleString("default", { month: "long" })
 );
 
-const MessageDetails = () => {
+const ViewMessage = () => {
   const [messageCount, setMessageCount] = useState("Once");
   const [sendFrequency, setSendFrequency] = useState("Once");
   const [selectedWeekdays, setSelectedWeekdays] = useState<string[]>([]);
@@ -81,12 +81,7 @@ const MessageDetails = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-
-      <div className="flex flex-1 flex-col lg:flex-row">
-    
-        <main className="flex-1 p-4 sm:p-6 bg-gray-50 overflow-y-auto">
-          <div className="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-6">
-            <div className="text-center mb-8">
+          <div className="text-center mb-8">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
                 Message Details
               </h1>
@@ -95,6 +90,12 @@ const MessageDetails = () => {
                 preferences.
               </p>
             </div>
+
+      <div className="flex flex-1 flex-col lg:flex-row">
+        
+    
+          <div className="max-w-5xl w-full m-2 bg-white shadow-md rounded-lg p-6">
+          
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-100 p-4 rounded-lg">
               <div>
@@ -383,10 +384,11 @@ const MessageDetails = () => {
               </button>
             </div>
           </div>
-        </main>
+       
       </div>
     </div>
   );
 };
 
-export default MessageDetails;
+export default ViewMessage;
+
